@@ -406,11 +406,11 @@
       <argument type='bool' />
     </function>
     <function group='cast' name='INT' return-type='int'>
-      <formula>CAST(TRUNC(%1) AS BIGINT)</formula>
+      <formula>CAST(TRUNCATE(%1) AS BIGINT)</formula>
       <argument type='real' />
     </function>
     <function group='cast' name='INT' return-type='int'>
-      <formula>CAST(TRUNC(CAST(%1 AS DOUBLE PRECISION)) AS BIGINT)</formula>
+      <formula>CAST(TRUNCATE(CAST(%1 AS DOUBLE PRECISION)) AS BIGINT)</formula>
       <argument type='str' />
     </function>
     <function group='cast' name='INT' return-type='int'>
@@ -914,7 +914,7 @@
       <argument type='bool' />
     </function>
     <function group='date' name='ISOYEAR' return-type='int'>
-      <formula>CAST(TRUNC(EXTRACT(ISOYEAR FROM %1)) AS INTEGER)</formula>
+      <formula>CAST(TRUNCATE(EXTRACT(ISOYEAR FROM %1)) AS INTEGER)</formula>
       <argument type='datetime' />
     </function>
     <function group='date' name='ISOQUARTER' return-type='int'>
@@ -922,11 +922,11 @@
       <argument type='datetime' />
     </function>
     <function group='date' name='ISOWEEK' return-type='int'>
-      <formula>CAST(TRUNC(EXTRACT(WEEK FROM %1)) AS INTEGER)</formula>
+      <formula>CAST(TRUNCATE(EXTRACT(WEEK FROM %1)) AS INTEGER)</formula>
       <argument type='datetime' />
     </function>
     <function group='date' name='ISOWEEKDAY' return-type='int'>
-      <formula>CAST(TRUNC(EXTRACT(ISODOW FROM %1)) AS INTEGER)</formula>
+      <formula>CAST(TRUNCATE(EXTRACT(ISODOW FROM %1)) AS INTEGER)</formula>
       <argument type='datetime' />
     </function>
     <date-function name='DATEADD' return-type='datetime'>
@@ -986,13 +986,13 @@
       <argument type='str' />
     </date-function>
     <date-function name='DATEPART' return-type='int'>
-      <formula>CAST(TRUNC(EXTRACT(%1 FROM %2)) AS INTEGER)</formula>
+      <formula>CAST(TRUNCATE(EXTRACT(%1 FROM %2)) AS INTEGER)</formula>
       <formula part='weekday'>(1 + CAST(EXTRACT(DOW FROM %2) AS INTEGER))</formula>
       <formula part='week'>CAST(FLOOR((7 + EXTRACT(DOY FROM %2) - 1 + EXTRACT(DOW FROM DATE_TRUNC(&apos;YEAR&apos;, %2))) / 7) AS INTEGER)</formula>
       <formula part='iso-quarter'>(LEAST(CAST((EXTRACT(WEEK FROM %2) - 1) AS BIGINT) / 13, 3) + 1)</formula>
-      <formula part='iso-week'>CAST(TRUNC(EXTRACT(WEEK FROM %2)) AS INTEGER)</formula>
-      <formula part='iso-weekday'>CAST(TRUNC(EXTRACT(ISODOW FROM %2)) AS INTEGER)</formula>
-      <formula part='iso-year'>CAST(TRUNC(EXTRACT(ISOYEAR FROM %2)) AS INTEGER)</formula>
+      <formula part='iso-week'>CAST(TRUNCATE(EXTRACT(WEEK FROM %2)) AS INTEGER)</formula>
+      <formula part='iso-weekday'>CAST(TRUNCATE(EXTRACT(ISODOW FROM %2)) AS INTEGER)</formula>
+      <formula part='iso-year'>CAST(TRUNCATE(EXTRACT(ISOYEAR FROM %2)) AS INTEGER)</formula>
       <argument type='localstr' />
       <argument type='datetime' />
     </date-function>
