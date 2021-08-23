@@ -12,7 +12,7 @@
           <attr>dbname</attr>
           <attr>authentication</attr>
           <attr>username</attr>
-          <attr>password</attr>
+<!--          <attr>password</attr> -->
           <attr>sslmode</attr>
         </attribute-list>
       </required-attributes>
