@@ -131,7 +131,7 @@
       <argument type='real' />
     </function>
     <function group='numeric' name='ROUND' return-type='real'>
-      <formula>ROUND(CAST(%1 AS NUMERIC),CAST(%2 AS INTEGER))</formula>
+      <formula>ROUND(CAST(%1 AS DECIMAL),CAST(%2 AS INTEGER))</formula>
       <argument type='real' />
       <argument type='real' />
     </function>
